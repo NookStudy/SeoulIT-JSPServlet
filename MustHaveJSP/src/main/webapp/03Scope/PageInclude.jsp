@@ -1,0 +1,26 @@
+<%@page import="common.Person"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>    						
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h4>Include 페이지</h4>
+<%
+int pInteger2 = (Integer)(pageContext.getAttribute("pageInteger"));
+//String pString2 = pageContext.getAttribute("pageString").toString();
+Person pPerson2 = (Person)(pageContext.getAttribute("pagePerson"));
+%>
+<ul>	
+<!-- 	변수가 같으면 오류난다 -->
+    <li>Integer 객체 : <%= pInteger2 %></li>
+    <li>String 객체 : <%= pageContext.getAttribute("pageString") %></li>
+    <li>Person 객체 : <%= pPerson2.getName() %>, <%= pPerson2.getAge() %></li>
+</ul>
+	
+</body>
+</html>
